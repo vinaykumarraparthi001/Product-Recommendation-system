@@ -1,0 +1,80 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Airbnb Recommendation System</title>
+  </head>
+  <body>
+    <h1>Airbnb Recommendation System</h1>
+    <form method="POST" action="/recommend">
+      <label for="text">Enter your input text:</label>
+      <input type="text" name="text" id="text">
+      <input type="submit" value="Submit">
+    </form>
+  </body>
+</html>
+
+
+
+
+<!doctype html>
+<html>
+  <head>
+    <title>Recommended Airbnb Listings</title>
+    <style>
+      .tile {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 20px;
+        box-shadow: 0px 0px 5px grey;
+        border-radius: 10px;
+        overflow: hidden;
+      }
+      .tile-img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+      }
+      .tile-title {
+        font-size: 24px;
+        font-weight: bold;
+        text-align: center;
+        margin: 10px;
+      }
+      .tile-description {
+        font-size: 16px;
+        text-align: center;
+        margin: 10px;
+      }
+      .tile-price {
+        font-size: 18px;
+        font-weight: bold;
+        text-align: center;
+        margin: 10px;
+      }
+      .tiles-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        grid-gap: 20px;
+        margin: 20px;
+      }
+      h1 {
+        font-size: 24px;
+        margin-bottom: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Recommended Airbnb Listings</h1>
+    <div class="tiles-container">
+      {% for listing in listings %}
+      <div class="tile">
+        <img class="tile-img" src="{{ listing['picture_url'] }}">
+        <div class="tile-title">{{ listing['name'] }}</div>
+        <div class="tile-description">{{ listing['description'] }}</div>
+        <div class="tile-price">{{ listing['price'] }} per night</div>
+      </div>
+      {% endfor %}
+    </div>
+  </body>
+</html>
