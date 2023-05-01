@@ -136,7 +136,9 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 
 # Load the dataset
-df_listings = pd.read_csv('C:\\Users\\vraparth\\Coding\\Untitled Folder\\cleaned_listings.csv', nrows=20000)
+#df_listings = pd.read_csv('C:\\Users\\vraparth\\Coding\\Untitled Folder\\cleaned_listings.csv', nrows=20000)
+df_listings = pd.read_csv('C:\\Users\\vraparth\\Coding\\Product Recommendation System\\cleaned_listings.csv', nrows=20000)
+
 
 
 
