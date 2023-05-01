@@ -1,14 +1,50 @@
 <!doctype html>
-<html>
+<html lang="en">
   <head>
-    <title>Airbnb Recommendation System</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Airbnb Recommendation System - Los Angeles</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <style>
+      #logo {
+        height: 50px;
+        margin-right: 10px;
+      }
+      h1 {
+        font-size: 40px;
+        font-weight: bold;
+        margin-top: 0;
+        display: flex;
+        align-items: center;
+      }
+      .subtitle {
+        font-size: 20px;
+        font-weight: bold;
+        margin-bottom: 40px;
+      }
+    </style>
   </head>
   <body>
-    <h1>Airbnb Recommendation System</h1>
-    <form method="POST" action="/recommend">
-      <label for="text">Enter your input text:</label>
-      <input type="text" name="text" id="text">
-      <input type="submit" value="Submit">
-    </form>
+    <div class="container">
+      <h1>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Airbnb_Logo_B%C3%A9lo.svg/1280px-Airbnb_Logo_B%C3%A9lo.svg.png" alt="Airbnb Logo" id="logo">
+        Recommendation System
+      </h1>
+      <p class="subtitle" style="text-align: justify;">Los Angeles</p>
+      <div class="row">
+        <form class="col s12" method="POST" action="/recommend">
+          <div class="row">
+            <div class="input-field col s12">
+              <input id="text" type="text" name="text" class="validate">
+              <label for="text">Enter your input text</label>
+            </div>
+          </div>
+          <div class="center-align">
+            <button class="btn waves-effect waves-light" type="submit" name="action">Submit</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   </body>
 </html>
